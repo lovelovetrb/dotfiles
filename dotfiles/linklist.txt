@@ -9,3 +9,12 @@ nvim ${HOME}/.config/nvim
 
 # vscode
 .vscode ${HOME}/.vscode
+
+# i3
+i3 ${HOME}/.config/i3
+
+# i3blocks
+i3blocks ${HOME}/.config/i3blocks
+
+# alacritty
+alacritty ${HOME}/.config/alacritty
