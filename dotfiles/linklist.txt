@@ -1,0 +1,11 @@
+# .zshrc
+.zshrc ${HOME}/.zshrc
+
+# neovim
+nvim ${HOME}/.config/nvim
+
+# hyper
+.hyper.js ${HOME}/.hyper.js
+
+# vscode
+.vscode ${HOME}/.vscode
