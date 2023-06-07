@@ -50,7 +50,7 @@ return packer.startup(function(use)
     'startup-nvim/startup.nvim',
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
-      require "startup".setup({theme = "dashboard"})
+      require "startup".setup({ theme = "dashboard" })
     end
   })
 
@@ -100,6 +100,7 @@ return packer.startup(function(use)
   use({ "hrsh7th/cmp-buffer" })   --bufferを補完ソースに
   use({ "hrsh7th/cmp-path" })     --pathを補完ソースに
   use({ "onsails/lspkind.nvim" })
+
   --LuaSnip
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -117,6 +118,14 @@ return packer.startup(function(use)
     config = function()
       require("gitsigns").setup()
     end,
+  })
+
+  use({
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('neogit').setup {}
+    end
   })
 
   -- SSH
