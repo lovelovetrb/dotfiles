@@ -80,8 +80,14 @@ bindsym $mod+Return exec alacritty
 # start google chrome
 bindsym $mod+c exec google-chrome-stable
 
-# start google chrome
-bindsym $mod+x exec code
+# start VSCode insiders
+bindsym $mod+x exec code-insiders
+
+# start Notion
+bindsym $mod+n exec notion-app
+
+# start Slack
+bindsym $mod+s exec slack
 
 # kill focused window
 bindsym $mod+Shift+q kill
