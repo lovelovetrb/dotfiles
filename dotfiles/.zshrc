@@ -22,6 +22,7 @@ alias lyria='ssh lyria'
 alias thalys='ssh thalys'
 
 alias lg='lazygit'
+alias code='code-insiders'
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
