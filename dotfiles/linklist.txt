@@ -16,6 +16,9 @@ i3 ${HOME}/.config/i3
 # i3blocks
 i3blocks ${HOME}/.config/i3blocks
 
+# bumblebee-status
+bumblebee-status ${HOME}/.config/bumblebee-status
+
 # alacritty
 alacritty ${HOME}/.config/alacritty
 
