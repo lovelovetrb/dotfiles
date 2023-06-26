@@ -24,3 +24,6 @@ alacritty ${HOME}/.config/alacritty
 
 # .gitconfig
 .gitconfig ${HOME}/.gitconfig
+
+# starship
+starship.toml ${HOME}/.config/starship.toml
