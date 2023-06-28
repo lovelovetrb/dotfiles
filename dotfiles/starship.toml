@@ -1,28 +1,58 @@
+format = """
+[┌── ](bold #c6c8d1)$shlvl$status$username$directory
+[└─](bold #c6c8d1)$character"""
+right_format = """$time$memory_usage$battery$git_branch$git_status$git_commit$golang$python$cmd_duration"""
+continuation_prompt = '▶▶ '
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "bold #84a0c6"
+
+[memory_usage]
+disabled = false
+format = "[$symbol$ram]($style) "
+threshold = 0
+style = "bold #a093c7"
+symbol = " "
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+
+[[battery.display]]
+threshold = 100
+style = 'bold #e2a478'
+
 
 [aws]
 style = "bold #ffb86c"
 
 [character]
-error_symbol = "[>](bold #ff5555)"
-success_symbol = "[>](bold #50fa7b)"
+error_symbol = "[▶ ](bold #e27878)"
+success_symbol = "[▶ ](bold #c6c8d1)"
 
 [cmd_duration]
-style = "bold #f1fa8c"
+format = 'underwent [$duration](bold #e2a478)'
 
 [directory]
-style = "bold #50fa7b"
-truncation_length = 100
-truncate_to_repo = false
+style = "bold #84a0c6"
+read_only_style = "#c6c8d1"
+fish_style_pwd_dir_length = 3
+format = "[$read_only]($read_only_style)[  ]($style)[$path]($style) "
+truncation_length = 4
+truncation_symbol = ".../"
 
 [git_branch]
-style = "bold #ff79c6"
+style = "bold #e27878"
 
 [git_status]
-style = "bold #ff5555"
+style = "bold #e27878"
 
 [hostname]
 style = "bold #bd93f9"
 
 [username]
-format = "[$user]($style) on "
+format = "[$user]($style)"
 style_user = "bold #8be9fd"
