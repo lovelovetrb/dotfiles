@@ -9,8 +9,7 @@ require("mason").setup({
   }
 })
 require('mason-tool-installer').setup({
-  ensure_installed = { 'lua-language-server', 'luacheck',
-    'luaformatter', 'prettierd', 'typescript-language-server', 'eslint_d', 'css-lsp', 'typescript-language-server' },
+  ensure_installed = { 'prettierd', 'typescript-language-server', 'eslint_d', 'css-lsp', 'typescript-language-server','pyright',  'black', 'flake8', 'isort' },
   auto_update = true,
   run_on_start = true,
   start_delay = 3000,
@@ -27,7 +26,6 @@ prettier.setup({
     "javascript",
     "javascriptreact",
     "json",
-    "less",
     "markdown",
     "scss",
     "typescript",
@@ -58,7 +56,8 @@ require 'lspconfig'.lua_ls.setup {
     },
   },
 }
-require 'lspconfig'.pyright.setup {}
+
+require("lspconfig").pyright.setup({})
 
 -- C-bでhoverでLSPの情報が閲覧できる。
 vim.api.nvim_set_keymap('n', '<C-b>', '<Cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true })
@@ -115,9 +114,13 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require('null-ls').setup({
   sources = {
     null_ls.builtins.diagnostics.eslint.with({
-      prefer_local = "node_modules/.bin",   --プロジェクトローカルがある場合はそれを利用
+      prefer_local = "node_modules/.bin", --プロジェクトローカルがある場合はそれを利用
     }),
-    null_ls.builtins.formatting.prettierd
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.black, -- python formatter
+		null_ls.builtins.formatting.isort, -- python import sort
+		null_ls.builtins.diagnostics.flake8, -- python linter
+
   },
   debug = true,
   -- you can reuse a shared lspconfig on_attach callback here

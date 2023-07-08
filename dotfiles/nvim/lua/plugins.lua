@@ -49,9 +49,6 @@ return packer.startup(function(use)
   use({
     'startup-nvim/startup.nvim',
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    config = function()
-      require "startup".setup({ theme = "dashboard" })
-    end
   })
 
   -- Colorschemes
@@ -87,9 +84,12 @@ return packer.startup(function(use)
   use 'romgrk/barbar.nvim'
 
   -- manage external editor tooling such as LSP servers, DAP servers, linters, and formatters
+  use {
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+  }
   use({
     "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   })
   use 'WhoIsSethDaniel/mason-tool-installer.nvim'
@@ -121,7 +121,7 @@ return packer.startup(function(use)
   })
 
   use({
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
       require('neogit').setup {}

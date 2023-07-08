@@ -30,7 +30,7 @@ local options = {
 	cursorline = true,
 	number = true,
 	relativenumber = false,
-	numberwidth = 4,
+	numberwidth = 1,
 	signcolumn = "yes",
 	wrap = true,
 	winblend = 0,
@@ -38,7 +38,7 @@ local options = {
 	pumblend = 5,
 	scrolloff = 8,
 	sidescrolloff = 8,
-	guifont = "monospace:h7",
+	guifont = "Juisee:h12", --TODO: this doesn't seem to work
 	splitbelow = false, -- オンのとき、ウィンドウを横分割すると新しいウィンドウはカレントウィンドウの下に開かれる
 	splitright = false, -- オンのとき、ウィンドウを縦分割すると新しいウィンドウはカレントウィンドウの右に開かれる
 }
