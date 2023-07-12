@@ -5,12 +5,14 @@ font:
   normal:
     #family: AurulentSansMono Nerd Font
     #family: ComicShannsMono Nerd Font
-    family: Hurmit Nerd Font
-  size: 7
+    #family: Hurmit Nerd Font
+    family: TerminessTTF Nerd Font
+    # family: PlemolJP Console NF
+  size: 8
   offset:
-    # y: 5
+    y: 9
     # family -> Hurmit
-    y: 8
+    # y: 8
 
 key_bindings:
   - { key: Return, mods: Shift, action: SpawnNewInstance }

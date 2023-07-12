@@ -27,3 +27,6 @@ alacritty ${HOME}/.config/alacritty
 
 # starship
 starship.toml ${HOME}/.config/starship.toml
+
+# wezterm
+wezterm/wezterm.lua ${HOME}/.config/wezterm/wezterm.lua

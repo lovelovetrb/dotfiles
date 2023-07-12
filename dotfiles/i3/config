@@ -76,7 +76,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # start google chrome
 bindsym $mod+c exec google-chrome-stable
@@ -89,6 +90,9 @@ bindsym $mod+n exec notion-app
 
 # start Slack
 bindsym $mod+g exec slack
+
+# Filer
+bindsym $mod+/ exec caja
 
 # kill focused window
 bindsym $mod+Shift+q kill
