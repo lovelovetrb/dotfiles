@@ -127,14 +127,6 @@ return packer.startup(function(use)
     end,
   })
 
-  use({
-    'NeogitOrg/neogit',
-    requires = 'nvim-lua/plenary.nvim',
-    config = function()
-      require('neogit').setup {}
-    end
-  })
-
   -- SSH
   use {
     'chipsenkbeil/distant.nvim',

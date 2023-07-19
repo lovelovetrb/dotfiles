@@ -9,7 +9,7 @@ require("mason").setup({
   }
 })
 require('mason-tool-installer').setup({
-  ensure_installed = { 'prettierd', 'typescript-language-server', 'eslint_d', 'css-lsp', 'typescript-language-server','pyright',  'black', 'flake8', 'isort' },
+  ensure_installed = { 'prettierd', 'typescript-language-server', 'eslint_d', 'css-lsp', 'typescript-language-server','pyright',  'black', 'flake8', 'isort', 'lua_ls' },
   auto_update = true,
   run_on_start = true,
   start_delay = 3000,
