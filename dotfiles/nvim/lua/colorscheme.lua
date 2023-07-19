@@ -1,11 +1,11 @@
 vim.cmd [[
 try
   colorscheme iceberg
-    highlight Normal ctermbg=NONE guibg=NONE
-    highlight NonText ctermbg=NONE guibg=NONE
-    highlight LineNr ctermbg=NONE guibg=NONE
-    highlight Folded ctermbg=NONE guibg=NONE
-    highlight EndOfBuffer ctermbg=NONE guibg=NONEs
+    highlight Normal ctermbg=none guibg=none
+    highlight NonText ctermbg=none guibg=none
+    highlight LineNr ctermbg=none guibg=none
+    highlight Folded ctermbg=none guibg=none
+    highlight EndOfBuffer ctermbg=none guibg=none
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
