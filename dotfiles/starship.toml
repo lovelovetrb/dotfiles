@@ -29,8 +29,8 @@ style = 'bold #e2a478'
 style = "bold #ffb86c"
 
 [character]
-error_symbol = "[▶ ](bold #e27878)"
-success_symbol = "[▶ ](bold #c6c8d1)"
+error_symbol = "[󰣇 ](bold #e27878)"
+success_symbol = "[󰣇 ](bold #c6c8d1)"
 
 [cmd_duration]
 format = 'underwent [$duration](bold #e2a478)'

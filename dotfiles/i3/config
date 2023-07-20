@@ -30,7 +30,8 @@ exec --no-startup-id fcitx
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+# font pango:monospace 8
+font pango:PlemolJP Console NF Medium 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -50,11 +51,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-
-for_window [class="^.*"] border pixel 0
-gaps outer 5
-gaps inner 5
-smart_gaps on
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3blocks
@@ -205,10 +201,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -inc 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-# bindsym $mod+Shift+e exec --no-startup-id \
-#        "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
 bindsym $mod+Shift+e mode "$mode_system"
 set $Locker "i3lock -i ~/Pictures/i3lock.png && sleep 1"
 set $mode_system System (l) lock, (s) suspend, (h) hibernate, (Shift+e) logout, (Shift+r) reboot, (Shift+s) shutdown
@@ -252,6 +246,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $default_inner_gaps 10
+set $default_outer_gaps 5
+gaps inner $default_inner_gaps
+gaps outer $default_outer_gaps
+for_window [class=".*"] border pixel 3
+
+# hide title bar
+default_border pixel 1
+default_floating_border pixel 1
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #  amixer xrander pulseout memory battery date time \
@@ -274,14 +278,7 @@ bar {
           urgent_workspace   #FF5555 #FF5555 #F8F8F2
     }
 }
-# bar {
-#        status_command i3blocks
-#        mode dock
-#        position top
-#        separator_symbol " │ "
-#        workspace_buttons yes
-#        strip_workspace_numbers yes
-#        binding_mode_indicator yes
-#        tray_output none
-#        tray_padding 0
 
+# Window
+# <class>               <border> <background> <foreground> <indicator> <child_border>
+client.focused          #F15A22   #F15A22     #F15A22       #Fbb034      #Fbb034

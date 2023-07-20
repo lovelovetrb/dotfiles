@@ -52,7 +52,7 @@ return packer.startup(function(use)
   })
 
   -- Colorschemes
-  -- use({ "Mofiqul/dracula.nvim" }) -- Color scheme
+  use({ "Mofiqul/dracula.nvim" }) -- Color scheme
   use({ "cocopon/iceberg.vim" })
 
   -- Copilot
@@ -66,7 +66,7 @@ return packer.startup(function(use)
 
   -- file browser
   use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
   })
   use({ "nvim-telescope/telescope-file-browser.nvim" })
   use {

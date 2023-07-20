@@ -1,4 +1,12 @@
 local wezterm = require 'wezterm';
+local mac = wezterm.target_triple == "x86_64-apple-darwin"
+
+local font_size = 10.5
+
+if mac then
+  font_size = 13
+end
+
 return {
   -- 背景透過
   window_background_opacity = 0.7,
@@ -10,7 +18,7 @@ return {
   --     window:gui_window():toggle_fullscreen()
   -- end)
 
-  font_size = 13,
+  font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false })
   -- wezは日本人じゃないのでこれがないとIME動かない
