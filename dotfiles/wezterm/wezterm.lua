@@ -10,7 +10,7 @@ end)
 local font_size = 10.5
 
 if mac then
-  font_size = 13
+  font_size = 15
 end
 
 return {
