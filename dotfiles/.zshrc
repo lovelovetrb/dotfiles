@@ -49,3 +49,4 @@ source ~/Repos/znap/znap.zsh  # Start Znap
 
 # zsh-autocomplete plugin
 znap source zsh-users/zsh-autosuggestions
+bindkey '^k' autosuggest-accept
