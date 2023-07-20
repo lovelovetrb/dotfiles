@@ -40,3 +40,12 @@ if [ -f '/home/mizuki/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mizuki/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/mizuki/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mizuki/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Download Znap, if it's not there yet.
+[[ -r ~/Repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+source ~/Repos/znap/znap.zsh  # Start Znap
+
+# zsh-autocomplete plugin
+znap source zsh-users/zsh-autosuggestions

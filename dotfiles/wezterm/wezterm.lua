@@ -1,5 +1,11 @@
 local wezterm = require 'wezterm';
 local mac = wezterm.target_triple == "x86_64-apple-darwin"
+ -- 最初からフルスクリーンで起動
+local mux = wezterm.mux
+wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():toggle_fullscreen()
+end)
 
 local font_size = 10.5
 
@@ -11,12 +17,6 @@ return {
   -- 背景透過
   window_background_opacity = 0.7,
 
-  -- 最初からフルスクリーンで起動
-  -- local mux = wezterm.mux
-  -- wezterm.on("gui-startup", function(cmd)
-  --     local tab, pane, window = mux.spawn_window(cmd or {})
-  --     window:gui_window():toggle_fullscreen()
-  -- end)
 
   font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
