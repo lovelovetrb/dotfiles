@@ -54,6 +54,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use({ "Mofiqul/dracula.nvim" }) -- Color scheme
   use({ "cocopon/iceberg.vim" })
+  use({ "AlexvZyl/nordic.nvim" })
 
   -- Copilot
   use({ "github/copilot.vim" })

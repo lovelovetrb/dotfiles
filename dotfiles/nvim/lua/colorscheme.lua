@@ -1,6 +1,6 @@
 vim.cmd [[
 try
-  colorscheme iceberg
+  colorscheme nordic
   highlight Normal ctermbg=NONE guibg=NONE
   highlight NonText ctermbg=NONE guibg=NONE
   highlight LineNr ctermbg=NONE guibg=NONE
