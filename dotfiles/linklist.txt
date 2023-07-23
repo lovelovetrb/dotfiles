@@ -13,9 +13,6 @@ nvim ${HOME}/.config/nvim
 # i3
 i3 ${HOME}/.config/i3
 
-# i3blocks
-i3blocks ${HOME}/.config/i3blocks
-
 # bumblebee-status
 bumblebee-status ${HOME}/.config/bumblebee-status
 
@@ -30,3 +27,9 @@ starship.toml ${HOME}/.config/starship.toml
 
 # wezterm
 wezterm/wezterm.lua ${HOME}/.config/wezterm/wezterm.lua
+
+# xinitrc
+.xinitrc ${HOME}/.xinitrc
+
+# xprofile
+.xprofile ${HOME}/.xprofile
