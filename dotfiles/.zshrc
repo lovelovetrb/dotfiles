@@ -35,6 +35,10 @@ source "$HOME/.rye/env"
 alias activate='source .venv/bin/activate'
 alias dev='cd ~/dev'
 
+alias vim='nvim'
+alias v='nvim'
+alias sv='sudo nvim'
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mizuki/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mizuki/google-cloud-sdk/path.zsh.inc'; fi
 

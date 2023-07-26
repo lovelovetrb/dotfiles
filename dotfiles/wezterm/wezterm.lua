@@ -2,12 +2,14 @@ local wezterm = require 'wezterm';
 local mac = wezterm.target_triple == "x86_64-apple-darwin"
 -- 最初からフルスクリーンで起動
 local mux = wezterm.mux
-wezterm.on("gui-startup", function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  -- window:gui_window():toggle_fullscreen()
-end)
+if mac then
+  wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():toggle_fullscreen()
+  end)
+end
 
-local font_size = 10.5
+local font_size = 11.5
 
 if mac then
   font_size = 15

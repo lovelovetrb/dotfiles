@@ -23,7 +23,7 @@ set $mod Mod4
 
 #background
 # exec --no-startup-id ~/.fehbg
-exec --no-startup-id "feh --bg-scale /usr/share/bg/arch.ping"
+# exec --no-startup-id "feh --bg-scale /usr/share/bg/arch.ping"
 
 # fcitx
 exec --no-startup-id fcitx
