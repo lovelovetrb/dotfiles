@@ -121,12 +121,7 @@ return packer.startup(function(use)
   use('MunifTanjim/prettier.nvim')
 
   -- git
-  use({
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  })
+  use("lewis6991/gitsigns.nvim")
 
   -- SSH
   use {
