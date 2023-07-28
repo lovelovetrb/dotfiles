@@ -1,6 +1,9 @@
 # .zshrc
 .zshrc ${HOME}/.zshrc
 
+# .bashrc
+.bashrc ${HOME}/.bashrc
+
 # neovim
 nvim ${HOME}/.config/nvim
 
