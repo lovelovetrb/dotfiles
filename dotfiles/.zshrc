@@ -26,7 +26,6 @@ alias code='code-insiders'
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
-eval "$(pyenv init --path)"
 export PATH="/Users/mizuki/.local/bin:$PATH"
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH:bin

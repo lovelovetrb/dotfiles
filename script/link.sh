@@ -1,4 +1,6 @@
 #!/bin/sh
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
 
 dotfiles_root=$(cd $(dirname $0)/.. && pwd)
 
