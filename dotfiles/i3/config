@@ -246,11 +246,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+################# i3-gaps #######################
 set $default_inner_gaps 10
 set $default_outer_gaps 5
 gaps inner $default_inner_gaps
 gaps outer $default_outer_gaps
 for_window [class=".*"] border pixel 3
+
+################# i3-radius #######################
+# smart_borders on
+# smart_borders no_gaps
+# border_radius 2
+
 
 # hide title bar
 default_border pixel 1
