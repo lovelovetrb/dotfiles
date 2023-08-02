@@ -18,15 +18,13 @@ end
 return {
   -- 背景透過
   window_background_opacity = 0.7,
-
-
   font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false })
   -- wezは日本人じゃないのでこれがないとIME動かない
   use_ime = true,
   -- 自分の好きなテーマ探す https://wezfurlong.org/wezterm/colorschemes/index.html
-  color_scheme = "iceberg-dark",
+  color_scheme = "Kanagawa (Gogh)",
   line_height = 1.65,
 
   -- tab bar
