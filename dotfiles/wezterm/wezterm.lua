@@ -20,6 +20,9 @@ return {
   window_background_opacity = 0.7,
   font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
+  initial_rows = 65,
+  initial_cols = 260,
+  window_decorations = "RESIZE",
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false })
   -- wezは日本人じゃないのでこれがないとIME動かない
   use_ime = true,
