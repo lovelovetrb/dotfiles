@@ -9,7 +9,7 @@ local mac = wezterm.target_triple == "x86_64-apple-darwin"
 --   end)
 -- end
 
-local font_size = 11.5
+local font_size = 10.5
 
 if mac then
   font_size = 15
