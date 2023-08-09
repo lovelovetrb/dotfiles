@@ -26,7 +26,7 @@ set $mod Mod4
 # exec --no-startup-id "feh --bg-scale /usr/share/bg/arch.ping"
 
 # fcitx
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -269,9 +269,9 @@ default_floating_border pixel 1
 bar {
     font pango:Hack Regular 9
     position top
-    tray_output none
+    tray_output primary
     status_command ~/.config/bumblebee-status/bumblebee-status -m disk:root \
-        amixer memory battery bluetooth date time \
+        amixer memory battery bluetooth date time  \
         -p root.path=/ time.format="%H:%M:%S" date.format="%Y %b %d %a" \
         -p interval=.8s \
         -t iceberg-dark-powerline

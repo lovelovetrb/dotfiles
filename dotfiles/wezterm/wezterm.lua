@@ -17,12 +17,14 @@ end
 
 return {
   -- 背景透過
-  window_background_opacity = 0.7,
+  -- window_background_opacity = 0.7,
   font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
   initial_rows = 65,
   initial_cols = 260,
   window_decorations = "RESIZE",
+  use_ime = true,
+  ime_preedit_rendering = "Builtin",
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false })
   -- 自分の好きなテーマ探す https://wezfurlong.org/wezterm/colorschemes/index.html
   color_scheme = "Kanagawa (Gogh)",
