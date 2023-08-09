@@ -11,6 +11,7 @@ lspconfig.tsserver.setup {
 --css setting
 lspconfig.cssls.setup {}
 --lua setting
+
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
