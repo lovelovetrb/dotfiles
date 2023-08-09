@@ -10,14 +10,16 @@ local mac = wezterm.target_triple == "x86_64-apple-darwin"
 -- end
 
 local font_size = 10.5
+local window_background_opacity = 1
 
 if mac then
   font_size = 15
+  window_background_opacity = 0.85
 end
 
 return {
   -- 背景透過
-  -- window_background_opacity = 0.7,
+  window_background_opacity = window_background_opacity,
   font_size = font_size,
   font = wezterm.font("FirgeNerd Console", { weight = "Regular", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
   initial_rows = 65,
