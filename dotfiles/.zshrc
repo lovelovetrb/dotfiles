@@ -22,6 +22,8 @@ alias lyria='ssh lyria'
 alias thalys='ssh thalys'
 
 alias lg='lazygit'
+export EDITOR=nvim lazygit
+
 alias code='code-insiders'
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -36,6 +38,7 @@ alias dev='cd ~/dev'
 
 alias vim='nvim'
 alias v='nvim'
+alias vi='nvim'
 alias sv='sudo nvim'
 
 # The next line updates PATH for the Google Cloud SDK.

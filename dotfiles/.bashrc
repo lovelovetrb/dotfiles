@@ -126,3 +126,4 @@ alias dev='cd ~/dev'
 
 alias vim='nvim'
 alias v='nvim'
+alias vi='nvim'
