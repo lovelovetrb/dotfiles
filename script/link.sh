@@ -4,6 +4,8 @@ rm -rf ~/.local/share/nvim
 
 dotfiles_root=$(cd $(dirname $0)/.. && pwd)
 
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
 # linklist.txtのコメントを削除
 __remove_linklist_comment() {(
     # '#'以降と空行を削除

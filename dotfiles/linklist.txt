@@ -7,6 +7,9 @@
 # neovim
 nvim ${HOME}/.config/nvim
 
+#nvchard
+nvchard_custom ${HOME}/.config/nvim/lua/custom
+
 # hyper
 .hyper.js ${HOME}/.hyper.js
 

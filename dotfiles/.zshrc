@@ -29,8 +29,6 @@ alias code='code-insiders'
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
 export PATH="/Users/mizuki/.local/bin:$PATH"
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH:bin
 source "$HOME/.rye/env"
 
 alias activate='source .venv/bin/activate'
