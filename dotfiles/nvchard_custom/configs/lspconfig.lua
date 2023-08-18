@@ -11,7 +11,6 @@ lspconfig.tsserver.setup {
 --css setting
 lspconfig.cssls.setup {}
 --lua setting
-
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
@@ -22,6 +21,7 @@ lspconfig.lua_ls.setup {
   },
 }
 
+-- python setting
 lspconfig.pyright.setup({})
 
 

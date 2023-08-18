@@ -8,13 +8,11 @@ local plugins = {
         require "custom.configs.null-ls"
       end,
     },
-
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -30,6 +28,7 @@ local plugins = {
         "typescript",
         "tsx",
         "json",
+        "astro",
 
         "python",
         "yaml",
@@ -40,5 +39,11 @@ local plugins = {
       },
     },
   },
+  {
+    "williamboman/mason.nvim",
+    opts = function()
+     return require "custom.configs.mason"
+    end,
+  }
 }
 return plugins
