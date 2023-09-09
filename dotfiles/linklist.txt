@@ -39,3 +39,6 @@ wezterm/wezterm.lua ${HOME}/.config/wezterm/wezterm.lua
 
 # xprofile
 .xprofile ${HOME}/.xprofile
+
+# neofetch
+neofetch ${HOME}/.config/neofetch

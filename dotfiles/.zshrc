@@ -24,9 +24,13 @@ alias thalys='ssh thalys'
 alias lg='lazygit'
 export EDITOR=nvim lazygit
 
-alias code='code-insiders'
-
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# pyenv setting
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+
 export TERM=xterm-256color
 export PATH="/Users/mizuki/.local/bin:$PATH"
 source "$HOME/.rye/env"
