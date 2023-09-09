@@ -3,11 +3,12 @@ local M = {}
 M.general = {
   i = {
     ["jj"] = { "<Esc>", "Leave Insert mode" },
+    ["<C-j>"] = {"<Plug>(copilot-Accept)"}
   },
 
   n = {
     -- create new tab
-    ["te"] = { ":tabnew<Return>", "new tab" },
+
     -- move beginning of line or ending of line
     ["<leader>h"] = { "^", "move beginning of line" },
     ["<leader>l"] = { "$", "move beginning of line" },
