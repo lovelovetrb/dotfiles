@@ -3,7 +3,6 @@ local M = {}
 M.general = {
   i = {
     ["jj"] = { "<Esc>", "Leave Insert mode" },
-    ["<C-j>"] = {"<Plug>(copilot-Accept)"}
   },
 
   n = {

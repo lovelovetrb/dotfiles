@@ -1,6 +1,16 @@
 local plugins = {
   { "github/copilot.vim", lazy = false },
   {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      -- require "plugins.configs.cmp"
+      return require "custom.configs.cmp"
+    end,
+    config = function(_, opts)
+      require("cmp").setup(opts)
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
