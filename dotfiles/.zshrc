@@ -16,10 +16,14 @@ if [[ $(command -v exa) ]]; then
   alias l='clear && ls'
 fi
 
+if [[ $(command -v bat) ]]; then
+  alias cat='bat'
+fi
+
 alias kanolab='ssh kanolab'
 alias freccia='ssh freccia'
 alias lyria='ssh lyria'
-alias thalys='ssh thalys'
+alias thalys='ssh thalys -L 6006:localhost:6006'
 
 alias lg='lazygit'
 export EDITOR=nvim lazygit
@@ -43,12 +47,6 @@ alias v='nvim'
 alias vi='nvim'
 alias sv='sudo nvim'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/mizuki/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mizuki/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/mizuki/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mizuki/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Download Znap, if it's not there yet.
 [[ -r ~/Repos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
@@ -62,3 +60,16 @@ bindkey '^k' autosuggest-accept
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mizuki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mizuki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mizuki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mizuki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/mizuki/.bun/_bun" ] && source "/Users/mizuki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
