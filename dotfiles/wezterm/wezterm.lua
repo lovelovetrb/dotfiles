@@ -15,7 +15,7 @@ local font_size = 10.5
 local window_background_opacity = 1
 
 if intelMac or armMac then
-  font_size = 15
+  font_size = 16.5
   window_background_opacity = 0.45
 end
 
