@@ -3,6 +3,7 @@ local M = {}
 M.general = {
   i = {
     ["jj"] = { "<Esc>", "Leave Insert mode" },
+    ["<C-j>"] = {"<Plug>(copilot-Accept)","accept copilot suggest"}
   },
 
   n = {
@@ -29,6 +30,8 @@ M.general = {
       end,
       "LSP formatting",
     },
+
+    ["<leader>g"] = {":LazyGit<Return>", "open lazygit"},
   },
 
   v = {
