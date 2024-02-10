@@ -1,5 +1,6 @@
 local plugins = {
-  { "github/copilot.vim", lazy = false },
+  { "github/copilot.vim",    lazy = false },
+  { "kdheepak/lazygit.nvim", lazy = false },
   {
     "hrsh7th/nvim-cmp",
     opts = function()
