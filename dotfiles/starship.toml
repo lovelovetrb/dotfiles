@@ -1,5 +1,5 @@
 format = """
-[┌── ](bold #c6c8d1)$shlvl$status$username$directory
+[┌── ](bold #c6c8d1)$hostname$shlvl$status$directory
 [└─](bold #c6c8d1)$character"""
 right_format = """$time$memory_usage$battery$git_branch$git_status$git_commit$golang$python$cmd_duration"""
 
