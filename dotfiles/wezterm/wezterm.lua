@@ -15,7 +15,7 @@ local font_size = 10.5
 local window_background_opacity = 1
 
 if intelMac or armMac then
-  font_size = 16.5
+  font_size = 13.5
   window_background_opacity = 0.45
 end
 
@@ -30,7 +30,8 @@ return {
   window_background_opacity = window_background_opacity,
   macos_window_background_blur = 30,
   font_size = font_size,
-  font = wezterm.font("FirgeNerd Console", { weight = "Bold", stretch = "Normal", italic = false }), -- 自分の好きなフォントいれる
+  font = wezterm.font("Moralerspace Neon NF", { weight = "Bold", stretch = "Normal", italic = false }),
+  -- font = wezterm.font("FirgeNerd Console", { weight = "Bold", stretch = "Normal", italic = false }), 
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false }),
   initial_rows = 65,
   initial_cols = initial_cols,
