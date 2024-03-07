@@ -1,4 +1,5 @@
 local plugins = {
+  { 'wakatime/vim-wakatime', lazy = false },
   { "github/copilot.vim",    lazy = false },
   { "kdheepak/lazygit.nvim", lazy = false },
   {
