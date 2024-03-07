@@ -1,12 +1,12 @@
 format = """
-[┌── ](bold #c6c8d1)$hostname$shlvl$status$directory
+[┌── ](bold #c6c8d1)$hostname$shlvl$status$directory$git_branch$git_status$git_commit
 [└─](bold #c6c8d1)$character"""
-right_format = """$time$memory_usage$battery$git_branch$git_status$git_commit$golang$python$cmd_duration"""
+# right_format = """$time$memory_usage$battery$git_branch$git_status$git_commit$golang$python$cmd_duration"""
 
 [time]
 disabled = false
 format = "[$time]($style) "
-style = "bold #84a0c6"
+style = "bold #ffc1c1"
 
 [memory_usage]
 disabled = false
@@ -29,8 +29,8 @@ style = 'bold #e2a478'
 style = "bold #ffb86c"
 
 [character]
-error_symbol = "[󰣇 ](bold #c6c8d1)"
-success_symbol = "[󰣇 ](bold #1793d1)"
+error_symbol = "[ > ](bold #ff7f7f)"
+success_symbol = "[ > ](bold #c6c8d1)"
 
 [cmd_duration]
 format = 'underwent [$duration](bold #e2a478)'
@@ -39,7 +39,7 @@ format = 'underwent [$duration](bold #e2a478)'
 style = "bold #84a0c6"
 read_only_style = "#c6c8d1"
 fish_style_pwd_dir_length = 3
-format = "[$read_only]($read_only_style)[  ]($style)[$path]($style) "
+format = "[$read_only]($read_only_style)[  ]($style)[$path]($style) "
 truncation_length = 4
 truncation_symbol = ".../"
 
