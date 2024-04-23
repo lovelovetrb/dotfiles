@@ -1,5 +1,5 @@
 format = """
-[┌── ](bold #c6c8d1)$hostname$shlvl$status$directory$git_branch$git_status$git_commit
+[┌── ](bold #c6c8d1)$hostname$shlvl$status$directory$git_branch$git_status$git_commit$bun$python
 [└─](bold #c6c8d1)$character"""
 # right_format = """$time$memory_usage$battery$git_branch$git_status$git_commit$golang$python$cmd_duration"""
 
@@ -27,6 +27,14 @@ style = 'bold #e2a478'
 
 [aws]
 style = "bold #ffb86c"
+
+[bun]
+format = 'via [🍔 $version](bold green) '
+
+[python]
+symbol = '👾 '
+version_format = 'v${raw}'
+pyenv_version_name = true
 
 [character]
 error_symbol = "[ > ](bold #ff7f7f)"
