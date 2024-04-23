@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 
+-- tsserver setting
 lspconfig.tsserver.setup {
   on_attach = function(client)
     client.server_capabilities.documentFormattingProviser = false
@@ -10,6 +11,7 @@ lspconfig.tsserver.setup {
 
 --css setting
 lspconfig.cssls.setup {}
+--
 --lua setting
 lspconfig.lua_ls.setup {
   settings = {
@@ -23,5 +25,7 @@ lspconfig.lua_ls.setup {
 
 -- python setting
 lspconfig.pyright.setup({})
+
+
 
 
