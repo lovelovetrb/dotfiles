@@ -1,11 +1,45 @@
 local plugins = {
-  { 'wakatime/vim-wakatime', lazy = false },
   { "github/copilot.vim",    lazy = false },
+  { 'wakatime/vim-wakatime', lazy = false },
   { "kdheepak/lazygit.nvim", lazy = false },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    lazy = false,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = function()
+      require "custom.configs.notice"
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp"
+  },
   {
     "hrsh7th/nvim-cmp",
     opts = function()
-      -- require "plugins.configs.cmp"
       return require "custom.configs.cmp"
     end,
     config = function(_, opts)

@@ -1,8 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
-local header = require("custom.headers")
 M.ui = {
-  theme = 'github_dark',
+  theme = 'bearded-arc',
   transparency = true,
   nvdash = {
     load_on_startup = true,
