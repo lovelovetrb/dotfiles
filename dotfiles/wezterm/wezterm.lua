@@ -15,14 +15,14 @@ local font_size = 10.5
 local window_background_opacity = 1
 
 if intelMac or armMac then
-  font_size = 13.5
-  window_background_opacity = 0.45
+  font_size = 14.0
+  window_background_opacity = 0.75
 end
 
 local initial_cols = 260
 
 if armMac then
-  initial_cols = 280
+  initial_cols = 300
 end
 
 return {
@@ -30,8 +30,9 @@ return {
   window_background_opacity = window_background_opacity,
   macos_window_background_blur = 30,
   font_size = font_size,
-  font = wezterm.font("Moralerspace Neon NF", { weight = "Bold", stretch = "Normal", italic = false }),
-  -- font = wezterm.font("FirgeNerd Console", { weight = "Bold", stretch = "Normal", italic = false }), 
+  -- font = wezterm.font("Moralerspace Neon NF", { weight = "Bold", stretch = "Normal", italic = false }),
+  -- font = wezterm.font("Moralerspace Krypton NF", { weight = "Bold", stretch = "Normal", italic = false }),
+  font = wezterm.font("FirgeNerd Console", { weight = "Bold", stretch = "Normal", italic = false }),
   -- font = wezterm.font("TerminessTTF Nerd Font", { weight = "Regular", stretch = "Normal", italic = false }),
   initial_rows = 65,
   initial_cols = initial_cols,
@@ -40,11 +41,23 @@ return {
   ime_preedit_rendering = "Builtin",
   -- 自分の好きなテーマ探す https://wezfurlong.org/wezterm/colorschemes/index.html
   color_scheme = "Kanagawa (Gogh)",
-  line_height = 1.65,
+  line_height = 1.70,
 
   window_close_confirmation = 'NeverPrompt',
 
+  keys = {
+    {
+      key = 's',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
+    {
+      key = 'v',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
 
+  },
   -- tab bar
   use_fancy_tab_bar = false,
   colors = {
