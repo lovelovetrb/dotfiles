@@ -1,11 +1,14 @@
 # .zshrc
 .zshrc ${HOME}/.zshrc
 
+# .zprofile
+.zprofile ${HOME}/.zprofile
+
 # .bashrc
 .bashrc ${HOME}/.bashrc
 
 # neovim
-nvim ${HOME}/.config/nvim
+# nvim ${HOME}/.config/nvim
 
 #nvchard
 nvchard_custom ${HOME}/.config/nvim/lua/custom
