@@ -4,7 +4,7 @@ rm -rf ~/.local/share/nvim
 
 dotfiles_root=$(cd $(dirname $0)/.. && pwd)
 
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone -b v2.0 https://github.com/NvChad/NvChad.git --depth 1 ~/.config/nvim
 
 # linklist.txtのコメントを削除
 __remove_linklist_comment() {(
