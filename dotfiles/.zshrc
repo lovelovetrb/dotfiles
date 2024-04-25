@@ -73,3 +73,6 @@ if [ -f '/Users/mizuki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fvm
+export PATH="$PATH":"$HOME/fvm/default/bin"
