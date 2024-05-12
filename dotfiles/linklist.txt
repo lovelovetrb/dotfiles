@@ -37,6 +37,9 @@ starship.toml ${HOME}/.config/starship.toml
 # wezterm
 wezterm/wezterm.lua ${HOME}/.config/wezterm/wezterm.lua
 
+# kitty
+kitty ${HOME}/.config/kitty
+
 # xinitrc
 .xinitrc ${HOME}/.xinitrc
 
