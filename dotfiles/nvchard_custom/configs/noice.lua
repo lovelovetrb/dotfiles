@@ -3,7 +3,26 @@ require("notify").setup({
 })
 
 require('noice').setup({
+  messages = {
+    view_search = "mini",
+  },
+  routes = {
+    {
+      view = "mini",
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "written",
+      },
+    },
+  },
   views = {
+    notify = {
+      size = {
+        width = 40,
+        height = 10,
+      },
+    },
     cmdline_popup = {
       position = {
         row = 5,
@@ -21,7 +40,7 @@ require('noice').setup({
         col = "50%",
       },
       size = {
-        width = 60,
+        width = 50,
         height = 10,
       },
       border = {
