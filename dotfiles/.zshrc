@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
 
 if [[ $(command -v exa) ]]; then
@@ -46,6 +48,8 @@ alias vim='nvim'
 alias v='nvim'
 alias vi='nvim'
 alias sv='sudo nvim'
+
+alias icat='kitten icat'
 
 # Download Znap, if it's not there yet.
 [[ -r ~/Repos/znap/znap.zsh ]] ||
