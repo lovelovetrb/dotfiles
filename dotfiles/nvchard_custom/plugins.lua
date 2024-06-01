@@ -5,18 +5,13 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
     lazy = false,
   },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = function()
-      require "custom.configs.notice"
+    config = function()
+      require "custom.configs.noice"
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
