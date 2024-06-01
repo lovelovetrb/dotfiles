@@ -4,7 +4,7 @@ rm -rf ~/.local/share/nvim
 
 dotfiles_root=$(cd $(dirname $0)/.. && pwd)
 
-git clone -b v2.0 https://github.com/NvChad/NvChad.git --depth 1 ~/.config/nvim
+git clone git@github.com:lovelovetrb/nvchad_starter.git ~/.config/nvim
 
 # linklist.txtのコメントを削除
 __remove_linklist_comment() {(
@@ -26,4 +26,3 @@ __remove_linklist_comment "$linklist" | while read target link; do
     mkdir -p $(dirname ${link})
     ln -fsn ${target} ${link}
 done
-
