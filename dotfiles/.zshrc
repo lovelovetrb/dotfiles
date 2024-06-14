@@ -1,4 +1,8 @@
 export LANG=en_US.UTF-8
+export EDITOR=nvim lazygit
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export TERM=xterm-256color
+export PATH="/Users/mizuki/.local/bin:$PATH"
 
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
 
@@ -28,21 +32,12 @@ alias lyria='ssh lyria'
 alias thalys='ssh thalys -L 6006:localhost:6006'
 
 alias lg='lazygit'
-export EDITOR=nvim lazygit
 
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+alias dev='cd ~/dev'
 
-# pyenv setting
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-
-export TERM=xterm-256color
-export PATH="/Users/mizuki/.local/bin:$PATH"
 source "$HOME/.rye/env"
 
 alias activate='source .venv/bin/activate'
-alias dev='cd ~/dev'
 
 alias vim='nvim'
 alias v='nvim'
@@ -59,7 +54,7 @@ source ~/Repos/znap/znap.zsh  # Start Znap
 
 # zsh-autocomplete plugin
 znap source zsh-users/zsh-autosuggestions
-bindkey '^k' autosuggest-accept
+bindkey '^y' autosuggest-accept
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
