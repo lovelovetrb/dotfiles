@@ -27,6 +27,9 @@ if [[ $(command -v bat) ]]; then
   alias cat='bat'
 fi
 
+# コピー時に$が挿入されないようにする
+alias "$"=""
+
 alias kanolab-gateway='ssh kanolab-gateway'
 alias kanolab='ssh kanolab'
 alias freccia='ssh freccia'
