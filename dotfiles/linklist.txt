@@ -1,6 +1,9 @@
 # .zshrc
 .zshrc ${HOME}/.zshrc
 
+# .zshrc
+.zsh-highlight-theme.zsh ${HOME}/.zsh-highlight-theme.zsh
+
 # .zprofile
 .zprofile ${HOME}/.zprofile
 
