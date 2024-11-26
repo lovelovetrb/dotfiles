@@ -3,6 +3,7 @@ export EDITOR=nvim lazygit
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
 export PATH="/Users/mizuki/.local/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
 
@@ -30,7 +31,7 @@ alias kanolab-gateway='ssh kanolab-gateway'
 alias kanolab='ssh kanolab'
 alias freccia='ssh freccia'
 alias lyria='ssh lyria'
-alias thalys='ssh thalys -L 6006:localhost:6006'
+alias thalys='ssh thalys'
 
 alias lg='lazygit'
 
