@@ -48,6 +48,7 @@ alias vim='nvim'
 alias v='nvim'
 alias vi='nvim'
 alias sv='sudo nvim'
+alias devcon_nvim='~/dotfiles/dotfiles/devcontainer-nvim.sh'
 
 alias icat='kitten icat'
 
