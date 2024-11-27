@@ -14,7 +14,10 @@ resolved_config_path=$(readlink -f "$config_path")
 # Construct the command to run the devcontainer
 command="devcontainer up $rebuild_flag \
   --mount type=bind,source=$resolved_config_path,target=/nvim-config/nvim \
-  --additional-features='{\"ghcr.io/duduribeiro/devcontainer-features/neovim:1\": { \"version\": \"stable\" }}' \
+  --additional-features='{ \
+  \"ghcr.io/duduribeiro/devcontainer-features/neovim:1\": { \"version\": \"stable\" }, \
+  \"ghcr.io/devcontainers/features/node:1\": { \"version\": \"lts\" } \
+  }' \
   --workspace-folder ."
 
 # Print the constructed command
