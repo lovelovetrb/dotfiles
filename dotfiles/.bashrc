@@ -1,3 +1,5 @@
+ulimit -n 65536
+
 if [[ $(command -v eza) ]]; then
   alias e='eza --icons --git'
   alias l=e
@@ -21,15 +23,17 @@ alias lla='ls -lA'
 alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
-alias active='source .venv/bin/activate'
-alias nvim='~/nvim.appimage'
+alias activate='source .venv/bin/activate'
 alias sys_python='~/python3.10/bin/python3'
 source "$HOME/.cargo/env"
 
 alias dev='cd ~/dev'
 
-alias vim='nvim'
+alias nvim='~/dotfiles/dotfiles/launch_nvim.sh'
 alias v='nvim'
-alias vi='nvim'
+
+if [[ $(command -v lazygit) ]]; then
+    alias lg='lazygit'
+fi
 
 eval "$(starship init bash)"

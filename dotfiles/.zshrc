@@ -44,11 +44,10 @@ source "$HOME/.rye/env"
 
 alias activate='source .venv/bin/activate'
 
-alias vim='nvim'
+alias nvim='~/dotfiles/dotfiles/launch_nvim.sh'
 alias v='nvim'
 alias vi='nvim'
 alias sv='sudo nvim'
-alias devcon_nvim='~/dotfiles/dotfiles/devcontainer-nvim.sh'
 
 alias icat='kitten icat'
 
