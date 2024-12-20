@@ -9,7 +9,12 @@ if [[ "$1" == "-r" || "$1" == "--rebuild" ]]; then
   rebuild_flag="--remove-existing-container"
 fi
 
-#
+if [[ "$1" == "-l" || "$1" == "--local" ]]; then
+  eval "$NVIM_PATH -c 'lua require(\"noice\").redirect(function() local notify = require(\"notify\"); notify(\"You are in Local Env\", \"info\", { title = \"Activate venv\" }) end)'"
+  exit 0
+fi
+
+
 # Get the Neovim config path using headless nvim
 config_path=$($NVIM_PATH --headless -c 'lua io.stdout:write(vim.fn.stdpath("config"))' -c 'q' --clean)
 # Resolve symlink for the config path
@@ -20,9 +25,9 @@ if [ -d ".devcontainer" ]; then
   SSH_AUTH_SOCK_PATH="${SSH_AUTH_SOCK:-$HOME/.ssh/agent.sock}"
   
   # Construct the command to run the devcontainer
+  # --mount type=bind,source=${HOME}/.gitconfig,target=/etc/gitconfig \
   command="devcontainer up $rebuild_flag \
     --mount type=bind,source=$resolved_config_path,target=/nvim-config/nvim \
-    --mount type=bind,source=${HOME}/.gitconfig,target=/root/.gitconfig \
     --mount type=bind,source=${SSH_AUTH_SOCK_PATH},target=/ssh-agent \
     --additional-features='{ \
     \"ghcr.io/duduribeiro/devcontainer-features/neovim:1\": { \"version\": \"stable\" }, \
