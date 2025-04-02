@@ -16,7 +16,7 @@ __remove_linklist_comment() {(
 
 # シンボリックリンクを作成
 cd ${dotfiles_root}/dotfiles
-linklist="linklist.txt"
+linklist="../script/linklist.txt"
 [ ! -r "$linklist" ] && return
 __remove_linklist_comment "$linklist" | while read target link; do
     # ~ や環境変数を展開

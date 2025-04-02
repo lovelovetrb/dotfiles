@@ -31,9 +31,6 @@ bumblebee-status ${HOME}/.config/bumblebee-status
 # alacritty
 alacritty ${HOME}/.config/alacritty
 
-# global gitignore
-git/ignore ${HOME}/git/ignore
-
 # .gitconfig
 .gitconfig ${HOME}/.gitconfig
 
