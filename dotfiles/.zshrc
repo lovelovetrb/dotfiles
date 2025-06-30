@@ -1,9 +1,22 @@
+if [ -z "$SSH_AUTH_SOCK" ]; then
+   # Check for a currently running instance of the agent
+   RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+   if [ "$RUNNING_AGENT" = "0" ]; then
+      # Launch a new instance of the agent
+      ssh-agent -s &> $HOME/.ssh/ssh-agent
+   fi
+   eval `cat $HOME/.ssh/ssh-agent`
+fi
+
+ssh-add --apple-use-keychain ~/.ssh/id_github
+
 export LANG=en_US.UTF-8
 export EDITOR=nvim lazygit
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
 export PATH="/Users/mizuki/.local/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
+export MANPAGER='nvim +Man!'
 
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
 
@@ -39,8 +52,6 @@ alias thalys='ssh thalys'
 alias lg='lazygit'
 
 alias dev='cd ~/dev'
-
-source "$HOME/.rye/env"
 
 alias activate='source .venv/bin/activate'
 
@@ -83,3 +94,13 @@ if [ -f '/Users/mizuki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mizuki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mizuki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# fnm
+FNM_PATH="/Users/mizuki/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/mizuki/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# Added by Windsurf
+export PATH="/Users/mizuki/.codeium/windsurf/bin:$PATH"
