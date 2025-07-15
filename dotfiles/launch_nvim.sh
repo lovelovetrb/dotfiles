@@ -20,29 +20,19 @@ if [[ "$1" == "-l" || "$1" == "--local" ]]; then
   exit 0
 fi
 
-
 # Get the Neovim config path using headless nvim
 config_path=$($NVIM_PATH --headless -c 'lua io.stdout:write(vim.fn.stdpath("config"))' -c 'q' --clean)
 # Resolve symlink for the config path
 resolved_config_path=$(readlink -f "$config_path")
 
-# package.jsonの存在チェック
-if [ ! -f "package.json" ]; then
-    node_feature='\"ghcr.io/devcontainers/features/node:1\": { \"version\": \"18\" }'
-else
-    node_feature=''
-fi
-
-if [ -d ".devcontainer" ]; then
+if [ -d ".devcontainer" ] || [ -f ".devcontainer.json" ]; then
   # devcontainerコマンドを構築
   command="devcontainer up $rebuild_flag \
     --mount type=bind,source=$resolved_config_path,target=/home/vscode/.config/nvim \
     --mount type=bind,source=${HOME}/.gitconfig,target=/etc/gitconfig \
-    --mount type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix \
     --additional-features='{ 
     \"ghcr.io/duduribeiro/devcontainer-features/neovim:1\": { \"version\": \"stable\" }, 
     \"ghcr.io/GeorgOfenbeck/features/lazygit-linuxbinary:1\": {}, 
-    \ $node_feature
     }' \
     --workspace-folder ."
   
@@ -52,8 +42,6 @@ if [ -d ".devcontainer" ]; then
   # Run the command
   eval "$command"
 
-  
-  # devcontainerを実行する際にSSH_AUTH_SOCKを設定
   eval "devcontainer exec \
     --remote-env XDG_CONFIG_HOME=/home/vscode/.config \
     --remote-env SHELL=/bin/bash \
