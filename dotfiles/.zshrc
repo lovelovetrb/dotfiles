@@ -55,10 +55,7 @@ alias dev='cd ~/dev'
 
 alias activate='source .venv/bin/activate'
 
-alias nvim='~/dotfiles/dotfiles/launch_nvim.sh'
-alias v='nvim'
-alias vi='nvim'
-alias sv='sudo nvim'
+alias v='~/dotfiles/dotfiles/launch_nvim.sh'
 
 alias icat='kitten icat'
 
