@@ -31,6 +31,9 @@ bumblebee-status ${HOME}/.config/bumblebee-status
 # alacritty
 alacritty ${HOME}/.config/alacritty
 
+# .git 
+git ${HOME}/.config/git
+
 # .gitconfig
 .gitconfig ${HOME}/.gitconfig
 
