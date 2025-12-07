@@ -24,7 +24,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', {
 })
 
 
-vim.keymap.set('n', 'H', '0', {
+vim.keymap.set('n', 'H', '^', {
   noremap = true,
   silent = true,
   desc = 'Move to beginning of line'
