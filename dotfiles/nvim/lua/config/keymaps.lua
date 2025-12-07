@@ -37,11 +37,11 @@ vim.keymap.set('n', 'L', '$', {
 })
 
 vim.keymap.set('n', '<C-f>', function()
-  vim.lsp.buf.format({ async = false })
+  require('conform').format({ async = false, lsp_fallback = true })
 end, {
   noremap = true,
   silent = true,
-  desc = 'Format with LSP'
+  desc = 'Format with conform'
 })
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {
