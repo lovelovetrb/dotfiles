@@ -3,6 +3,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.fillchars = { eob = ' ' }
 vim.opt.laststatus = 0 -- 3: global statusline  2: always statusline 1: show statusline when over two window 0: no statusline
+vim.opt.statusline = "─"
+vim.opt.fillchars:append({ stl = "─", stlnc = "─" })
+vim.opt.cmdheight = 0
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
