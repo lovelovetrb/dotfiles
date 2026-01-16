@@ -23,6 +23,11 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', {
   desc = 'Move to right window'
 })
 
+vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', {
+  noremap = true,
+  silent = true,
+  desc = 'Clear search highlight'
+})
 
 vim.keymap.set('n', 'H', '^', {
   noremap = true,
@@ -67,6 +72,12 @@ vim.keymap.set('n', '<leader>x', ':BufferClose<CR>', {
   noremap = true,
   silent = true,
   desc = 'Close buffer'
+})
+
+vim.keymap.set('n', '<leader>q', ':q<CR>', {
+  noremap = true,
+  silent = true,
+  desc = 'Quit window'
 })
 
 -- insert mode

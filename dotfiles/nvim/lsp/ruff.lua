@@ -6,14 +6,7 @@ vim.lsp.config('ruff', {
     python = {
       -- 仮想環境のルートパス
       venvPath = ".",
-      -- 仮想環境のフォルダ名
-      -- venv = ".venv",
       pythonPath = "./.venv/bin/python",
-      -- analysis = {
-      --   extraPaths = {"."},
-      --   autoSearchPaths = true,
-      --   useLibraryCodeForTypes = true
-      -- }
     }
   }
 })

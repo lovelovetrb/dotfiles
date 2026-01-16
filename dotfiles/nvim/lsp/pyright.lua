@@ -14,6 +14,16 @@ vim.lsp.config('pyright', {
       --   autoSearchPaths = true,
       --   useLibraryCodeForTypes = true
       -- }
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+      },
+      python = {
+        analysis = {
+          -- Ignore all files for analysis to exclusively use Ruff for linting
+          ignore = { '*' },
+        },
+      },
     }
   }
 })

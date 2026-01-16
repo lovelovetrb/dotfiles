@@ -12,6 +12,10 @@ return {
         -- To organize the imports.
         "ruff_organize_imports",
       },
+      javascript = { "biome" },
+      javascriptreact = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
     },
   },
 }

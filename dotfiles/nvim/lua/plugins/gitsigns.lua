@@ -11,8 +11,7 @@ return {
           topdelete = { text = '‾' },
           changedelete = { text = '~' },
         },
-        numhl = true,
-        linehl = true,
+        numhl = false,
         watch_gitdir = {
           interval = 500,
           follow_files = true,
