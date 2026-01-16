@@ -15,10 +15,9 @@ export EDITOR=nvim lazygit
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export TERM=xterm-256color
 export PATH="/Users/mizuki/.local/bin:$PATH"
-export PATH=$PATH:$(go env GOPATH)/bin
 export MANPAGER='nvim +Man!'
 
-eval source <(/usr/local/bin/starship init zsh --print-full-init)
+eval source <(/opt/homebrew/bin/starship init zsh --print-full-init)
 
 if [[ $(command -v eza) ]]; then
   alias e='eza --icons --git'
@@ -101,3 +100,13 @@ fi
 
 # Added by Windsurf
 export PATH="/Users/mizuki/.codeium/windsurf/bin:$PATH"
+
+# Rust lang
+if [ -f "$HOME/.cargo/env" ]; then
+  export PATH="$HOME/.cargo/env:$PATH"
+fi
+
+# Go lang
+if [ -x "$(command -v go)" ]; then
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
