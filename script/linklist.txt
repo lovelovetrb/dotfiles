@@ -54,3 +54,7 @@ neofetch ${HOME}/.config/neofetch
 
 # brewfile
 .Brewfile ${HOME}/.Brewfile
+
+# hushlogin
+.hushlogin ${HOME}/.hushlogin
+
