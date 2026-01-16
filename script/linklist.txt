@@ -57,3 +57,6 @@ kitty ${HOME}/.config/kitty
 
 # neofetch
 neofetch ${HOME}/.config/neofetch
+
+# brewfile
+.Brewfile ${HOME}/.Brewfile
