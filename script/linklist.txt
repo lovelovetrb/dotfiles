@@ -10,9 +10,6 @@ nvim ${HOME}/.config/nvim
 # .zprofile
 .zprofile ${HOME}/.zprofile
 
-# .bashrc
-.bashrc ${HOME}/.bashrc
-
 # hyper
 .hyper.js ${HOME}/.hyper.js
 
