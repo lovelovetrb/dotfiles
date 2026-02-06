@@ -1,3 +1,9 @@
+# tmux
+.tmux.conf ${HOME}/.tmux.conf
+
+# eza
+.eza ${HOME}/.config/eza
+
 # neovim
 nvim ${HOME}/.config/nvim
 
