@@ -1,3 +1,7 @@
+if [ $SHLVL = 1 ] && [ $(command -v tmux) ]; then
+  tmux
+fi
+
 if [ -z "$SSH_AUTH_SOCK" ]; then
    # Check for a currently running instance of the agent
    RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
