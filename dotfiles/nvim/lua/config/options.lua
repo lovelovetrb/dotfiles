@@ -38,31 +38,52 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = apply_transparency,
 })
 
+local osc52 = require("vim.ui.clipboard.osc52")
+
 vim.g.clipboard = {
   name = "OSC 52",
   copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    ["+"] = osc52.copy("+"),
+    ["*"] = osc52.copy("*"),
   },
   paste = {
-    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    ["+"] = osc52.paste("+"),
+    ["*"] = osc52.paste("*"),
   },
 }
 
+-- tmux内ではOSC 52のpaste応答がtmuxに傍受されるため、
+-- コピーはOSC 52（DCSパススルー経由で透過）、
+-- ペーストはNeovim内部レジスタにフォールバック
 if vim.env.TMUX then
-  local copy = { "tmux", "load-buffer", "-w", "-" }
-  local paste = { "bash", "-c", "tmux refresh-client -l && sleep 0.05 && tmux save-buffer -" }
   vim.g.clipboard = {
-    name = "tmux",
+    name = "OSC 52",
     copy = {
-      ["+"] = copy,
-      ["*"] = copy,
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
     },
     paste = {
-      ["+"] = paste,
-      ["*"] = paste,
+      ["+"] = function()
+        return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+      end,
+      ["*"] = function()
+        return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+      end,
     },
-    cache_enabled = 0,
   }
 end
+
+-- kittyはブラケットペーストモードが無効な接続（SSH等）では
+-- 改行をNEL（ESC E = \x1bE）に変換するため、vim.pasteをオーバーライドして対処
+vim.paste = (function(overridden)
+  return function(lines, phase)
+    local new_lines = {}
+    for _, line in ipairs(lines) do
+      local parts = vim.split(line, "\027E", { plain = true })
+      for _, part in ipairs(parts) do
+        table.insert(new_lines, part)
+      end
+    end
+    return overridden(new_lines, phase)
+  end
+end)(vim.paste)
