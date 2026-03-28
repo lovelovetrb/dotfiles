@@ -43,6 +43,11 @@ if [[ $(command -v bat) ]]; then
   alias cat='bat'
 fi
 
+if [[ $(command -v zoxide) ]]; then
+  alias cd='z'
+  alias cdi='zi'
+fi
+
 # コピー時に$が挿入されないようにする
 alias "$"=""
 
