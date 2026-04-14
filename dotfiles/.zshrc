@@ -44,6 +44,8 @@ if [[ $(command -v bat) ]]; then
 fi
 
 if [[ $(command -v zoxide) ]]; then
+  eval "$(zoxide init zsh)"
+
   alias cd='z'
   alias cdi='zi'
 fi

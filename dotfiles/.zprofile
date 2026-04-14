@@ -1,6 +1,5 @@
 export PATH=$HOME/.gem/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(zoxide init zsh)"
 
 if [ -d $HOME/Library/Android/sdk ]; then
     export ANDROID_HOME=$HOME/Library/Android/sdk
