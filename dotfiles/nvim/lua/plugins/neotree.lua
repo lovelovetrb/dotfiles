@@ -5,6 +5,34 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
+    {
+      "s1n7ax/nvim-window-picker",
+      version = "2.*",
+      config = function()
+        require("window-picker").setup({
+          hint = "statusline-winbar",
+          selection_chars = "abcdefghijklmnopqrstuvwxyz",
+          filter_rules = {
+            include_current_win = false,
+            autoselect_one = true,
+            bo = {
+              filetype = { "neo-tree", "neo-tree-popup", "notify" },
+              buftype = { "terminal", "quickfix" },
+            },
+          },
+          highlights = {
+            statusline = {
+              focused   = { fg = "#c0caf5", bg = "#3d59a1", bold = true },
+              unfocused = { fg = "#c0caf5", bg = "#2d3f6c", bold = true },
+            },
+            winbar = {
+              focused   = { fg = "#c0caf5", bg = "#3d59a1", bold = true },
+              unfocused = { fg = "#c0caf5", bg = "#2d3f6c", bold = true },
+            },
+          },
+        })
+      end,
+    },
   },
   lazy = false,                    -- neo-tree will lazily load itself
   keys = {
@@ -31,7 +59,8 @@ return {
       },
       window = {
         mappings = {
-          ["l"] = "open",
+          ["l"] = "open_with_window_picker",
+          ["<cr>"] = "open_with_window_picker",
           ["h"] = "close_node",
           ["<space>"] = "none",
           ["Y"] = {
@@ -49,6 +78,7 @@ return {
             desc = "Open with System Application",
           },
           ["P"] = { "toggle_preview", config = { use_float = false } },
+          ["w"] = "open_with_window_picker",
           ["<C-v>"] = "open_vsplit",
           ["<C-s>"] = "open_split",
         },
