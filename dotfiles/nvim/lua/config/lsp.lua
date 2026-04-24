@@ -12,6 +12,7 @@ vim.lsp.config('*', {
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
+vim.lsp.enable({ "pyrefly" })
 vim.lsp.enable('ruff')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('rust_analyzer')

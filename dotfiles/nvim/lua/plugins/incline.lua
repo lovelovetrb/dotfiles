@@ -4,6 +4,15 @@ return {
     main = "incline",
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons", "SmiteshP/nvim-navic" },
+    config = function(_, opts)
+      require("nvim-navic").setup({
+        lsp = {
+          auto_attach = true,
+          preference = { "pyright", "pyrefly" },
+        },
+      })
+      require("incline").setup(opts)
+    end,
     keys = {
       {
         "<leader>uN",
