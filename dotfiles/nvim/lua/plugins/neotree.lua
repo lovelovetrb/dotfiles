@@ -34,7 +34,6 @@ return {
       end,
     },
   },
-  lazy = false,                    -- neo-tree will lazily load itself
   keys = {
     {
       "<C-n>",
