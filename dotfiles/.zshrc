@@ -43,11 +43,23 @@ if [[ $(command -v bat) ]]; then
   alias cat='bat'
 fi
 
+if [[ $(command -v bat) ]]; then
+  source <(fzf --zsh)
+fi
+
 if [[ $(command -v zoxide) ]]; then
   eval "$(zoxide init zsh)"
 
   alias cd='z'
   alias cdi='zi'
+  stty -ixon
+  fzf-zoxide-cd() {
+    local dir
+    dir=$(zoxide query --list | fzf) && z "$dir"
+    zle reset-prompt
+  }
+  zle -N fzf-zoxide-cd
+  bindkey '^Q' fzf-zoxide-cd
 fi
 
 # コピー時に$が挿入されないようにする
