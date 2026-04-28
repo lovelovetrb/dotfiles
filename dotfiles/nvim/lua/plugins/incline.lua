@@ -22,7 +22,8 @@ return {
         local res = {
           ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
           ' ',
-          { filename, gui = modified and 'bold,italic' or 'bold' },
+          modified and '● ' or '',
+          { filename },
           guibg = '#44406e',
         }
         if props.focused then
