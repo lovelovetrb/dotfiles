@@ -53,14 +53,41 @@ if [[ $(command -v zoxide) ]]; then
   alias cd='z'
   alias cdi='zi'
   stty -ixon
-  fzf-zoxide-cd() {
-    local dir
-    dir=$(zoxide query --list | fzf) && z "$dir"
-    zle reset-prompt
-  }
-  zle -N fzf-zoxide-cd
-  bindkey '^Q' fzf-zoxide-cd
+  if [[ $(command -v fzf) ]]; then
+    fzf-zoxide-cd() {
+      local dir
+      dir=$(zoxide query --list | fzf) && z "$dir"
+      zle reset-prompt
+    }
+    zle -N fzf-zoxide-cd
+    bindkey '^Q' fzf-zoxide-cd
+  fi
 fi
+
+if [[ $(command -v ghq) ]]; then
+  export GHQ_ROOT="$HOME/ghq"
+  if [[ $(command -v fzf) ]]; then
+    # ghq + fzf: Ctrl+G to fuzzy-jump to repository
+    ghq-fzf() {
+      local repo
+      repo=$(ghq list | fzf \
+        --preview "bat --color=always --style=plain \$(ghq root)/{}/README.md 2>/dev/null || ls -la \$(ghq root)/{}" \
+        --prompt="repo> " \
+        --height 40% \
+        --layout=reverse \
+        --border)
+      if [ -n "$repo" ]; then
+        BUFFER="cd -- \$(ghq root)/$repo"
+        zle accept-line
+      fi
+      zle reset-prompt
+    }
+    zle -N ghq-fzf
+    bindkey "^g" ghq-fzf
+  fi 
+fi
+    
+
 
 # コピー時に$が挿入されないようにする
 alias "$"=""
@@ -80,6 +107,8 @@ alias activate='source .venv/bin/activate'
 alias v='~/dotfiles/dotfiles/launch_nvim.sh'
 
 alias icat='kitten icat'
+
+alias claude-telegram='claude --channels plugin:telegram@claude-plugins-official'
 
 # Download Znap, if it's not there yet.
 [[ -r ~/Repos/znap/znap.zsh ]] ||
