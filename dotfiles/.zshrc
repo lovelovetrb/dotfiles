@@ -26,7 +26,7 @@ eval source <(/opt/homebrew/bin/starship init zsh --print-full-init)
 if [[ $(command -v eza) ]]; then
   alias e='eza --icons --git'
   alias l=e
-  alias ls=e
+  alias ls=ee
   alias ea='eza -a --icons --git'
   alias la=ea
   alias lla='ea -l'
@@ -162,3 +162,11 @@ fi
 if [ -x "$(command -v go)" ]; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
+
+# pnpm
+export PNPM_HOME="/Users/ca02811/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
