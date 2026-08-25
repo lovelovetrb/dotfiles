@@ -7,10 +7,11 @@ return {
         enable = true,
         use_treesitter = true,
         chars = {
-          horizontal_line = "-",
+          horizontal_line = "━",
           vertical_line = "┃",
           left_top = "┏",
           right_arrow = "▶",
+          left_arrow = "━",
           left_bottom = "┗",
         },
         style = "#7aa2f7",
