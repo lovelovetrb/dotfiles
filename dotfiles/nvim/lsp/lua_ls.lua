@@ -1,4 +1,4 @@
-vim.lsp.config('lua_ls', {
+return {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
   root_markers = { '.luarc.json', '.luarc.jsonc', '.luacheckrc', '.stylua.toml', 'stylua.toml', 'selene.toml', 'selene.yml' },
@@ -14,4 +14,4 @@ vim.lsp.config('lua_ls', {
       telemetry = { enable = false },
     },
   },
-})
+}

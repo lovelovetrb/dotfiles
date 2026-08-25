@@ -1,4 +1,4 @@
-vim.lsp.config('pyrefly', {
+return {
   cmd = { 'uvx', 'pyrefly', 'lsp' },
   filetypes = { 'python' },
   settings = {
@@ -8,4 +8,4 @@ vim.lsp.config('pyrefly', {
       }
     }
   }
-})
+}

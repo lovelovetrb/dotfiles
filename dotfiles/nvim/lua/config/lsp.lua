@@ -17,4 +17,11 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('gopls')
 vim.lsp.enable('terraformls')
 
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.tf', '*.tfvars' },
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 return {}
