@@ -1,10 +1,11 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      ensure_installed = {
+    config = function()
+      require('nvim-treesitter').install {
         'lua',
         'python',
         'typescript',
@@ -12,8 +13,19 @@ return {
         'json',
         'html',
         'css',
-      },
-      auto_install = true,
-    },
+      }
+
+      -- main ブランチはハイライト・インデントを自動で有効にしないため、
+      -- パーサーが存在するファイルタイプでのみ明示的に開始する
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+          if lang and vim.treesitter.language.add(lang) then
+            vim.treesitter.start(args.buf, lang)
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
+      })
+    end,
   },
 }
