@@ -61,3 +61,7 @@ neofetch ${HOME}/.config/neofetch
 # hushlogin
 .hushlogin ${HOME}/.hushlogin
 
+# コーディングエージェント共通の作業指針
+AGENTS.md ${HOME}/.claude/CLAUDE.md  # Claude Code は CLAUDE.md として読む
+AGENTS.md ${HOME}/.codex/AGENTS.md   # Codex のグローバル設定
+
